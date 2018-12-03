@@ -199,7 +199,7 @@ function EjecutarComando(comando){
         $(nameclass).append(Exit());
       break;
     default:
-      $(nameclass).append("Comando no implementado");
+      $(nameclass).append("El programa no está instalado.");
       break;
   }
 }
