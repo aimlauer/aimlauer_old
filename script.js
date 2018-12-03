@@ -168,6 +168,7 @@ function EjecutarComando(comando){
 
 $(document).keypress(function(event){
  par = ".text"
+  alert(event.keyCode)
   switch(event.keyCode)
   {
     case 13:
@@ -183,6 +184,7 @@ $(document).keypress(function(event){
         return v.slice(0,-1);
       });
       comando = comando.slice(0, -1);
+      $(par).append("comando a ejecutar: "+comando);
       break;
     default:
       comando += String.fromCharCode(event.which);
