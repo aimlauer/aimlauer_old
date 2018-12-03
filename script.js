@@ -1,5 +1,5 @@
 var speed = 60;
-var prefijo = "> ";
+var prefijo = "% ";
 var i = 0;
 var comando = ""
 
