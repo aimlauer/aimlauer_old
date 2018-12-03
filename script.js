@@ -29,7 +29,7 @@ function MensajeAyuda(){
   texto += "&nbsp; echo [arg] <br> ";
   texto += "&nbsp; music <br> ";
   texto += "&nbsp; clear <br> ";
-  texto += "&nbsp; exit ";
+  texto += "&nbsp; exit <br>";
   return texto;
 }
 
