@@ -1,5 +1,5 @@
-var speed = 50;
-var entrada = "> ";
+var speed = 60;
+var prefijo = "> ";
 var i = 0;
 var comando = ""
 
@@ -132,34 +132,35 @@ function Exit(){
 
 function EjecutarComando(comando){
   comando = comando.split(" ");
+  nameclass = ".text"
   switch(comando[0]){
     case "echo":
       for (var j = 1; j < comando.length; j++){
-        $('.text').append(comando[j]+" ");
+        $(nameclass).append(comando[j]+" ");
       }
       break;
     case "ls":
-        $('.text').append(ListarArchivos());
+        $(nameclass).append(ListarArchivos());
       break;
     case "cat":
-        $('.text').append(MostrarContenido(comando));
+        $(nameclass).append(MostrarContenido(comando));
       break;
     case "":
       break;
     case "pwd":
-        $('.text').append(MostrarDirectorio());
+        $(nameclass).append(MostrarDirectorio());
       break;
     case "man":
-        $('.text').append(Informacion(comando));
+        $(nameclass).append(Informacion(comando));
       break;
     case "music":
-        $('.text').append(Music());
+        $(nameclass).append(Music());
       break;
     case "exit":
-        $('.text').append(Exit());
+        $(nameclass).append(Exit());
       break;
     default:
-      $('.text').append("Comando no implementado");
+      $(nameclass).append("Comando no implementado");
       break;
   }
 }
@@ -172,16 +173,22 @@ $(document).keypress(function(event){
       $('.text').append(SaltoLinea());
       EjecutarComando(comando)
       $('.text').append(SaltoLinea());
-      $('.text').append(entrada);
+      $('.text').append(prefijo);
       comando = ""
       break;
     case 8:
       event.preventDefault();
-      // No entiendo del todo el funcionamiento.
+      $('.text').empty();
+      comando = comando.slice(0, -1);
+      $('.text').append(prefijo);
+      $('.text').append(comando);
       break;
     default:
-      $('.text').append(String.fromCharCode(event.which));
       comando += String.fromCharCode(event.which);
+      $('.text').empty()
+      $('.text').append(prefijo);
+      $('.text').append(comando);
+      //$('.text').append(String.fromCharCode(event.which));
       break;
   }
 });
