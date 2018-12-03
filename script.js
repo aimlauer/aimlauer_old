@@ -166,30 +166,28 @@ function EjecutarComando(comando){
 }
 
 
-$(document).keypress(function(event){
- par = ".text"
-  switch(event.keyCode)
-  {
-    case 13:
-      $(par).append(SaltoLinea());
-      EjecutarComando(comando)
-      $(par).append(SaltoLinea());
-      $(par).append(prefijo);
-      comando = ""
-      break;
-    case 8:
+$(document).on("keypress", function(){
+  }).on('keydown',function(event){
+   par = ".text"
+    if(event.keyCode == 13){
+        $(par).append(SaltoLinea());
+        EjecutarComando(comando)
+        $(par).append(SaltoLinea());
+        $(par).append(prefijo);
+        comando = ""
+    }
+    else if(event.keyCode == 8){
       event.preventDefault();
       $(par).html(function(i,v){
         return v.slice(0,-1);
       });
       comando = comando.slice(0, -1);
-      $(par).append("comando a ejecutar: "+comando);
-      break;
-    default:
-      comando += String.fromCharCode(event.which);
-      $('.text').append(String.fromCharCode(event.which));
-      break;
-  }
+    }
+    else if (event.keyCode >= 48 && event.keyCode <= 57 || event.keyCode >= 65 && event.keyCode <= 90){
+      capture = String.fromCharCode(event.which).toLowerCase();
+      $(par).append(capture);
+      comando += capture;
+    }
 });
 
 
