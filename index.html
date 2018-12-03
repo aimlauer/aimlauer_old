@@ -1,0 +1,54 @@
+<style>
+body {
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(to right, darkblue,black);
+  height: 100vh;
+  position: relative;
+}
+.welcome {
+  display: inline-block;
+  font-size: 1.2rem;
+  font: normal 15px "Courier New", "Courier", monospace;
+  color: #ffffff;
+  padding: 1rem;
+}
+
+.text {
+  display: block;
+  font-size: 1.2rem;
+  font: normal 15px "Courier New", "Courier", monospace;
+  color: #ffffff;
+  padding: 1rem;
+}
+
+.help {
+  display: block;
+  font-size: 1.2rem;
+  font: normal 15px "Courier New", "Courier", monospace;
+  color: #ffffff;
+  padding: 1rem;
+}
+
+</style>
+
+
+<html>
+<head>
+<script src="https://code.jquery.com/jquery-1.7.js"></script>
+<script src="script.js"></script>
+<meta charset="utf-8">
+</head>
+<body>
+  <center>
+    <code class="welcome" id="welcome">
+    </code>
+  </center>
+  <code class="help">
+    <script>EscribirAyuda()</script>
+  </code>
+  <code class="text">
+  > <code class="output"></code> 
+  </code>
+</body>
+</html>
