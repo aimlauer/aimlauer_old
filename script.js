@@ -168,7 +168,6 @@ function EjecutarComando(comando){
 
 $(document).keypress(function(event){
  par = ".text"
-  alert(event.keyCode)
   switch(event.keyCode)
   {
     case 13:
