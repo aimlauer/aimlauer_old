@@ -10,7 +10,7 @@ function blink_text() {
 }
 
 function generar(){
-  var texto = "Esta es mi super página web, en desarrollo.";
+  var texto = "/home/allikn0w.github.io/Info";
   return texto;
 }
 
@@ -28,6 +28,8 @@ function MensajeAyuda(){
   texto += "&nbsp; cd [arg] <br> ";
   texto += "&nbsp; echo [arg] <br> ";
   texto += "&nbsp; music <br> ";
+  texto += "&nbsp; erl <br> ";
+  texto += "&nbsp; python <br> ";
   texto += "&nbsp; clear <br> ";
   texto += "&nbsp; exit <br>";
   return texto;
@@ -137,6 +139,27 @@ function Exit(){
   return "exit(): ERROR"
 }
 
+function Python(){
+  response = ""
+  response += "Mis proyectos de Python: <br>"
+  for (var z = 0; z < 4; z++){
+    response += "Mostrar proyectos de Python<br>"
+  }
+  return response
+}
+function Erl(){
+  response = ""
+  response += "Erlang/OTP 18 [erts-7.3] [source] [64-bit] [smp:6:6] [async-threads:10] [kernel-poll:false] <br>"
+  response += "<br> Eshell V7.3 <br>"
+  for (var z = 0; z < 6; z++){
+    response += z+'> io:fwrite("Mostrar cosas hechas en Erlang").<br>'
+  }
+  response += "<br>User switch command<br>"
+  response += "--> q "
+
+  return response
+}
+
 function EjecutarComando(comando){
   comando = comando.split(" ");
   nameclass = ".text"
@@ -162,6 +185,12 @@ function EjecutarComando(comando){
       break;
     case "man":
         $(nameclass).append(Informacion(comando));
+      break;
+    case "python":
+        $(nameclass).append(Python());
+      break;
+    case "erl":
+        $(nameclass).append(Erl());
       break;
     case "music":
         $(nameclass).append(Music());
