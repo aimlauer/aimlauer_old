@@ -2,6 +2,7 @@ var speed = 60;
 var prefijo = "% ";
 var i = 0;
 var comando = ""
+var usando_blink = false;
 
 function blink_text() {
   $('.blink').fadeOut(500);
@@ -28,7 +29,7 @@ function MensajeAyuda(){
   texto += "&nbsp; echo [arg] <br> ";
   texto += "&nbsp; music <br> ";
   texto += "&nbsp; clear <br> ";
-  texto += "&nbsp; exit <br> ";
+  texto += "&nbsp; exit ";
   return texto;
 }
 
@@ -66,7 +67,12 @@ function SaltoLinea(){
 
 /* Comandos */
 function ListarArchivos(){
-  return "asdf.txt  hack_me.txt  linux.txt"
+  var Archivos = ["linux.txt", "asdf.txt", "hack_me.txt"];
+  output = ""
+  for (z=0; z<Archivos.length; z++){
+    output += Archivos[z]+"<br>";
+  }
+  return output;
 }
 
 function MostrarDirectorio(){
@@ -181,8 +187,7 @@ document.addEventListener("keydown",function(event){
       comando = comando.slice(0, -1);
     }
 });
-
-$(document).keypress(function(){
+$(document).keypress(function(event){
    par = ".text"
     if(event.keyCode == 13){
         $(par).append(SaltoLinea());
@@ -197,6 +202,7 @@ $(document).keypress(function(){
       comando += capture;
     }
 });
+
 
 
 setInterval(blink_text, 1000);
