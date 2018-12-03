@@ -27,6 +27,7 @@ function MensajeAyuda(){
   texto += "&nbsp; cd [arg] <br> ";
   texto += "&nbsp; echo [arg] <br> ";
   texto += "&nbsp; music <br> ";
+  texto += "&nbsp; clear <br> ";
   texto += "&nbsp; exit <br> ";
   return texto;
 }
@@ -145,6 +146,9 @@ function EjecutarComando(comando){
     case "cat":
         $(nameclass).append(MostrarContenido(comando));
       break;
+    case "clear":
+        $(nameclass).empty();
+      break;
     case "":
       break;
     case "pwd":
@@ -166,8 +170,19 @@ function EjecutarComando(comando){
 }
 
 
-$(document).on("keypress", function(){
-  }).on('keydown',function(event){
+document.addEventListener("keydown",function(event){
+    if(event.keyCode == 8){
+      event.preventDefault();
+      if (comando != ""){
+        $(par).html(function(i,v){
+          return v.slice(0,-1);
+        });
+      }
+      comando = comando.slice(0, -1);
+    }
+});
+
+$(document).keypress(function(){
    par = ".text"
     if(event.keyCode == 13){
         $(par).append(SaltoLinea());
@@ -176,14 +191,7 @@ $(document).on("keypress", function(){
         $(par).append(prefijo);
         comando = ""
     }
-    else if(event.keyCode == 8){
-      event.preventDefault();
-      $(par).html(function(i,v){
-        return v.slice(0,-1);
-      });
-      comando = comando.slice(0, -1);
-    }
-    else if (event.keyCode >= 48 && event.keyCode <= 57 || event.keyCode >= 65 && event.keyCode <= 90){
+    else {
       capture = String.fromCharCode(event.which).toLowerCase();
       $(par).append(capture);
       comando += capture;
