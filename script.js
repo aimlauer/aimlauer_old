@@ -167,27 +167,28 @@ function EjecutarComando(comando){
 
 
 $(document).keypress(function(event){
+ par = ".text"
   switch(event.keyCode)
   {
     case 13:
-      $('.text').append(SaltoLinea());
+      $(par).append(SaltoLinea());
       EjecutarComando(comando)
-      $('.text').append(SaltoLinea());
-      $('.text').append(prefijo);
+      $(par).append(SaltoLinea());
+      $(par).append(prefijo);
       comando = ""
       break;
     case 8:
       event.preventDefault();
-      $('.text').empty();
+      $(par).empty();
       comando = comando.slice(0, -1);
-      $('.text').append(prefijo);
-      $('.text').append(comando);
+      $(par).append(prefijo);
+      $(par).append(comando);
       break;
     default:
       comando += String.fromCharCode(event.which);
-      $('.text').empty()
-      $('.text').append(prefijo);
-      $('.text').append(comando);
+      $(par).empty()
+      $(par).append(prefijo);
+      $(par).append(comando);
       //$('.text').append(String.fromCharCode(event.which));
       break;
   }
