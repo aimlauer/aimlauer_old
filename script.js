@@ -9,7 +9,7 @@ function blink_text() {
 }
 
 function generar(){
-  var texto = "Esta es mi super página web, está en desarrollo.";
+  var texto = "Esta es mi super página web, en desarrollo.";
   return texto;
 }
 
@@ -72,6 +72,24 @@ function MostrarDirectorio(){
   return "/home/allikn0w.github.io/Info"
 }
 
+function Informacion(arg){
+  info = ""
+  if (arg[1] == "this"){
+    info +="Creado en el 2018  <br>"
+    info +="weWEBweBWeB <br>"
+    info +="WdBWEbWeEBB  <br>"
+    info +="End of This"
+  }
+  else if (arg[1] == undefined){
+    info +="¿Qué página de manual quiere?"
+  }
+  else{
+    for (var x = 1; x<arg.length; x++){
+      info += "No existe entrada de manual para "+arg[x] + "<br>";
+    }
+  }
+  return info
+}
 
 function Music(){
   return "LILILL pEEp"
@@ -130,6 +148,9 @@ function EjecutarComando(comando){
       break;
     case "pwd":
         $('.text').append(MostrarDirectorio());
+      break;
+    case "man":
+        $('.text').append(Informacion(comando));
       break;
     case "music":
         $('.text').append(Music());
