@@ -179,12 +179,6 @@ $(document).keypress(function(event){
       break;
     case 8:
       event.preventDefault();
-      /*
-      $(par).empty();
-      comando = comando.slice(0, -1);
-      $(par).append(prefijo);
-      $(par).append(comando);
-      */
       $(par).html(function(i,v){
         return v.slice(0,-1);
       });
@@ -192,16 +186,10 @@ $(document).keypress(function(event){
       break;
     default:
       comando += String.fromCharCode(event.which);
-      /*
-      $(par).empty()
-      $(par).append(prefijo);
-      $(par).append(comando);
-      */
       $('.text').append(String.fromCharCode(event.which));
       break;
   }
 });
-
 
 
 setInterval(blink_text, 1000);
