@@ -204,20 +204,31 @@ function EjecutarComando(comando){
   }
 }
 
+$(document).keypress("l",function(e) {
+  par = ".text"
+  if(e.ctrlKey){
+    EjecutarComando("clear");
+  }
+});
+
 
 document.addEventListener("keydown",function(event){
-    if(event.keyCode == 8){
-      event.preventDefault();
-      if (comando != ""){
-        $(par).html(function(i,v){
-          return v.slice(0,-1);
-        });
-      }
-      comando = comando.slice(0, -1);
+  if(event.keyCode == 8){
+    event.preventDefault();
+    if (comando != ""){
+      $(par).html(function(i,v){
+        return v.slice(0,-1);
+      });
     }
+    comando = comando.slice(0, -1);
+  }
+  else if (event.ctrlKey == true && keyCode == 108){
+    alert("ctrl")
+    EjecutarComando("clear")
+  }
 });
 $(document).keypress(function(event){
-   par = ".text"
+    par = ".text"
     if(event.keyCode == 13){
         $(par).append(SaltoLinea());
         EjecutarComando(comando)
