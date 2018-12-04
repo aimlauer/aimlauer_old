@@ -229,7 +229,7 @@ $(document).keypress(function(event){
 });
 
 function GenerarInfo(){
-  var info = ['INFO 1','INFO 2','INFO 3','es solo para diverme','setTimeout de javascript is a pain in the ass']
+  var info = ["Man I don't know what that fuck is going on there." ]
   var output = ""
   for (var r=0; r<info.length; r++){
     output += info[r]+" "
