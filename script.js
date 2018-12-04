@@ -56,7 +56,7 @@ function SaltoLinea(){
 
 /* Comandos */
 function ListarArchivos(){
-  var Archivos = ["linux.txt", "mail", "hack_me.txt"];
+  var Archivos = ["linux.txt", "mail.erl", "hack_me.txt"];
   output = ""
   for (z=0; z<Archivos.length; z++){
     output += Archivos[z]+"<br>";
@@ -93,7 +93,7 @@ function Music(){
 
 function MostrarContenido(comando){
   switch(comando[1]){
-    case "mail":
+    case "mail.erl":
       response = ""
       response += "start() -> <br>"
       response +=  '&nbsp; build("g_ma_i_l"). <br>'
