@@ -259,7 +259,7 @@ $(document).keypress(function(event){
 });
 
 function GenerarInfo(){
-  var info = ["WOKE UP SORPRISE, AM I REALLY ALIVE?" ]
+  var info = ["WOKE UP SURPRISE, AM I REALLY ALIVE?" ]
   var output = ""
   for (var r=0; r<info.length; r++){
     output += info[r]+" "
