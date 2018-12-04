@@ -229,7 +229,7 @@ $(document).keypress(function(event){
 });
 
 function GenerarInfo(){
-  var info = ["WOKE UP SORPRISE, AM I REALLY ALIVE?","232 LINES WILL MAKE ME FEEL FINE" ]
+  var info = ["WOKE UP SORPRISE, AM I REALLY ALIVE?" ]
   var output = ""
   for (var r=0; r<info.length; r++){
     output += info[r]+" "
