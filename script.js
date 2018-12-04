@@ -22,10 +22,10 @@ function MensajeAyuda(){
   var texto = "help() -> <br>";
   texto += "&nbsp; ls <br>";
   texto += "&nbsp; pwd <br> ";
-  texto += "&nbsp; cat [arg] <br> ";
+  texto += "&nbsp; cat [args] <br> ";
   texto += "&nbsp; man this <br> ";
-  texto += "&nbsp; cd [arg] <br> ";
-  texto += "&nbsp; echo [arg] <br> ";
+  texto += "&nbsp; cd [args] <br> ";
+  texto += "&nbsp; echo [args] <br> ";
   texto += "&nbsp; music <br> ";
   texto += "&nbsp; whoami <br> ";
   texto += "&nbsp; lenguajes <br> ";
@@ -152,7 +152,7 @@ function Whoami(){
 
 function Escript(args){
   response = ""
-  switch(args){
+  switch(args[1]){
     case "mail":
       response += 'Andrés Imlauer" "{dresuer,chelesout}.g m4i_l[dot] com'
       break;
@@ -210,7 +210,7 @@ function EjecutarComando(comando){
         $(nameclass).append(Python());
       break;
     case "escript":
-        $(nameclass).append(Escript());
+        $(nameclass).append(Escript(comando));
       break;
     case "erl":
         $(nameclass).append(Erl());
