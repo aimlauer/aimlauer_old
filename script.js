@@ -129,7 +129,7 @@ function MostrarContenido(comando){
       return ascii
 			break;
     default:
-      return "cat: "+ comando[1] +": No existe el archivo o el directorio";
+      return "cat: No existe el archivo o el directorio";
   }
 }
 
