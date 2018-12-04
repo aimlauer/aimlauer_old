@@ -97,11 +97,12 @@ function MostrarContenido(comando){
       response = ""
       response += "-module(mail). <br>"
       response += "-compile(export_all). <br>"
+      response += "-record(person,{name,email}. <br> <br>"
       response += "start() -> <br>"
-      response +=  '&nbsp; build("g_ma_i_l"). <br>'
+      response +=  '&nbsp; build("g_ma_i_l"). <br> <br>'
       response +=  'build(Dominio) -> <br>'
-      response +=  '&nbsp; Email = "{dresuer,chelesout}"++Dominio++"[dot] com", <br>'
-      response +=  "&nbsp; io:format(Email)."
+      response += '&nbsp; P = #person{name="Andrés Imlauer", email="{dresuer,chelesout}"++Dominio++"[dot] com" }, <br>'
+      response += '&nbsp; io:format("~p ~p ~p ~n",[P#person.name,P#person.email]).'
       return response;
 			break;
     case "info":
