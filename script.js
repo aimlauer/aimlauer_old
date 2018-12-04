@@ -99,7 +99,7 @@ function MostrarContenido(comando){
       response +=  '&nbsp; build("g_ma_i_l"). <br>'
       response +=  'build(Dominio) -> <br>'
       response +=  '&nbsp; Email = "{dresuer,chelesout}"++Dominio++"[dot] com", <br>'
-      response +=  "&nbsp; io:format(Email). <br>"
+      response +=  "&nbsp; io:format(Email)."
       return response;
 			break;
     case "hack_me.txt":
