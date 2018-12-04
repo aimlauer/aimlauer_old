@@ -57,7 +57,7 @@ function SaltoLinea(){
 
 /* Comandos */
 function ListarArchivos(){
-  var Archivos = ["linux.txt", "mail", "hack_me.txt", "info"];
+  var Archivos = [ "mail", "hack_me.txt", "info"];
   output = ""
   for (z=0; z<Archivos.length; z++){
     output += Archivos[z]+"<br>";
@@ -110,20 +110,6 @@ function MostrarContenido(comando){
 			break;
     case "hack_me.txt":
       return "bWkgcGFzc3dvcmQgZXMgMTIzNA==";
-			break;
-    case "linux.txt":
- 			ascii = ""
-			ascii +=" [ 1561.519963] call trace: <br>"
-			ascii +="[ 1561.519964]  <#MC>  [<ffffffff81644340>] panic+0x91/0x1a4 <br>"
-			ascii +="[ 1561.519971]  [<ffffffff8102abeb>] mce_panic.part.14+0x18b/0x1c0 <br>"
-			ascii +="[ 1561.519973]  [<ffffffff8102ac80>] mce_panic+0x60/0xb0 <br>"
-			ascii +="[ 1561.519975]  [<ffffffff8102aec4>] mce_reign+0x1f4/0x200 <br>"
-			ascii +="[ 1561.519982]  [<ffffffff8136d48f>] ? intel_idle+0xbf/0x150 <br>"
-			ascii +="[ 1561.519987]  <<EOE>>  [<ffffffff81509697>] ? menu_select+0xe7/0x2c0 <br>"
-			ascii +="[ 1561.519991]  [<ffffffff815082d1>] cpuidle_idle_call+0xc1/0x280 <br> "
-			ascii +="[ 1561.519994]  [<ffffffff8101322a>] cpu_idle+0xca/0x120 <br>"
-			ascii +="[ 1561.519996]  [<ffffffff8163aa9a>] start_secondary+0xd9/0xdb <br>"
-      return ascii
 			break;
     default:
       return "cat: No existe el archivo o el directorio";
