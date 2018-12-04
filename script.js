@@ -30,6 +30,7 @@ function MensajeAyuda(){
   texto += "&nbsp; whoami <br> ";
   texto += "&nbsp; lenguajes <br> ";
   texto += "&nbsp; erl <br> ";
+  texto += "&nbsp; escript [args] <br> ";
   texto += "&nbsp; python <br> ";
   texto += "&nbsp; clear <br> ";
   texto += "&nbsp; exit <br>";
@@ -56,7 +57,7 @@ function SaltoLinea(){
 
 /* Comandos */
 function ListarArchivos(){
-  var Archivos = ["linux.txt", "mail.erl", "hack_me.txt", "info"];
+  var Archivos = ["linux.txt", "mail", "hack_me.txt", "info"];
   output = ""
   for (z=0; z<Archivos.length; z++){
     output += Archivos[z]+"<br>";
@@ -93,16 +94,15 @@ function Music(){
 
 function MostrarContenido(comando){
   switch(comando[1]){
-    case "mail.erl":
+    case "mail":
       response = ""
-      response += "-module(mail). <br>"
-      response += "-compile(export_all). <br>"
-      response += "-record(person,{name,email}. <br> <br>"
-      response += "start() -> <br>"
-      response +=  '&nbsp; build("g_ma_i_l"). <br> <br>'
+      response += "#!/usr/bin/env escript <br> <br>"
+      response += "-record(person,{name,email}). <br> <br>"
+      response += "main(_) -> <br>"
+      response +=  '&nbsp; build("g m4i_l"). <br> <br>'
       response +=  'build(Dominio) -> <br>'
-      response += '&nbsp; P = #person{name="Andrés Imlauer", email="{dresuer,chelesout}"++Dominio++"[dot] com" }, <br>'
-      response += '&nbsp; io:format("~p ~p ~p ~n",[P#person.name,P#person.email]).'
+      response += '&nbsp; P = #person{name="Andrés Imlauer", email="{dresuer,chelesout}."++Dominio++"[dot] com" }, <br>'
+      response += '&nbsp; io:format("~p ~p ~n",[P#person.name,P#person.email]).'
       return response;
 			break;
     case "info":
@@ -118,11 +118,7 @@ function MostrarContenido(comando){
 			ascii +="[ 1561.519971]  [<ffffffff8102abeb>] mce_panic.part.14+0x18b/0x1c0 <br>"
 			ascii +="[ 1561.519973]  [<ffffffff8102ac80>] mce_panic+0x60/0xb0 <br>"
 			ascii +="[ 1561.519975]  [<ffffffff8102aec4>] mce_reign+0x1f4/0x200 <br>"
-			ascii +="[ 1561.519977]  [<ffffffff8102b175>] mce_end+0xf5/0x100 <br>"
-			ascii +="[ 1561.519979]  [<ffffffff8102b92c>] do_machine_check+0x3fc/0x600 <br>"
 			ascii +="[ 1561.519982]  [<ffffffff8136d48f>] ? intel_idle+0xbf/0x150 <br>"
-			ascii +="[ 1561.519984]  [<ffffffff8165d78c>] machine_check+0x1c/0x30 <br>"
-			ascii +="[ 1561.519986]  [<ffffffff8136d48f>] ? intel_idle+0xbf/0x150 <br>"
 			ascii +="[ 1561.519987]  <<EOE>>  [<ffffffff81509697>] ? menu_select+0xe7/0x2c0 <br>"
 			ascii +="[ 1561.519991]  [<ffffffff815082d1>] cpuidle_idle_call+0xc1/0x280 <br> "
 			ascii +="[ 1561.519994]  [<ffffffff8101322a>] cpu_idle+0xca/0x120 <br>"
@@ -152,6 +148,19 @@ function Whoami(){
   response += "Andrés Imlauer"
   return response;
 }
+
+
+function Escript(args){
+  response = ""
+  switch(args){
+    case "mail":
+      response += 'Andrés Imlauer" "{dresuer,chelesout}.g m4i_l[dot] com'
+      break;
+  }
+  return response
+}
+
+
 function Lenguajes(){
   response = ""
   response += "Python, Erlang, C++, Bash"
@@ -199,6 +208,9 @@ function EjecutarComando(comando){
       break;
     case "python":
         $(nameclass).append(Python());
+      break;
+    case "escript":
+        $(nameclass).append(Escript());
       break;
     case "erl":
         $(nameclass).append(Erl());
