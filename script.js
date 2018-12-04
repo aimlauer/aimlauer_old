@@ -10,7 +10,7 @@ function blink_text() {
 }
 
 function generar(){
-  var texto = "cat /home/allikn0w.github.io/Info";
+  var texto = "cat /home/allikn0w.github.io/info";
   return texto;
 }
 
@@ -56,7 +56,7 @@ function SaltoLinea(){
 
 /* Comandos */
 function ListarArchivos(){
-  var Archivos = ["linux.txt", "mail.erl", "hack_me.txt"];
+  var Archivos = ["linux.txt", "mail.erl", "hack_me.txt", "info"];
   output = ""
   for (z=0; z<Archivos.length; z++){
     output += Archivos[z]+"<br>";
@@ -103,6 +103,9 @@ function MostrarContenido(comando){
       response +=  '&nbsp; Email = "{dresuer,chelesout}"++Dominio++"[dot] com", <br>'
       response +=  "&nbsp; io:format(Email)."
       return response;
+			break;
+    case "info":
+      location.reload(true);
 			break;
     case "hack_me.txt":
       return "bWkgcGFzc3dvcmQgZXMgMTIzNA==";
