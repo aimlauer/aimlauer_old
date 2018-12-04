@@ -95,6 +95,8 @@ function MostrarContenido(comando){
   switch(comando[1]){
     case "mail.erl":
       response = ""
+      response = "-module(mail)."
+      response = "-compile(export_all)."
       response += "start() -> <br>"
       response +=  '&nbsp; build("g_ma_i_l"). <br>'
       response +=  'build(Dominio) -> <br>'
