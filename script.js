@@ -140,7 +140,7 @@ function Escript(args){
   response = ""
   switch(args[1]){
     case "mail":
-      response += 'Andrés Imlauer" "{dresuer,chelesout}.g m4i_l[dot] com'
+      response += '"Andrés Imlauer" "{dresuer,chelesout}.g m4i_l[dot] com'
       break;
   }
   return response
