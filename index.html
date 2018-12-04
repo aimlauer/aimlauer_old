@@ -10,8 +10,15 @@ body {
   display: inline-block;
   font: normal 18px "Courier New", "Courier", monospace;
   color: #ffffff;
-  padding: 1rem;
 }
+
+
+.aboutme {
+  display: inline-block;
+  font: normal 18px "Courier New", "Courier", monospace;
+  color: #ffffff;
+}
+
 .CODIGO{
   display:block;
   padding: 1rem;
@@ -55,8 +62,16 @@ p {
 <meta charset="utf-8">
 </head>
 <body>
-    <code class="welcome" id="welcome">
-    </code>
+  <code class="CODIGO">
+    <code class="welcome" id="welcome"><script>setTimeout(EscribirBienvenida,50)</script>
+    </code><p class="blink">_</p>
+  </code>
+  <code class="CODIGO">
+    <code class="aboutme">
+      <script>setTimeout(EscribirInfo,100)</script>
+    </code><p class="blink">_</p>
+  </code>
+
   <code class="help">
     <script>EscribirAyuda()</script>
   </code>

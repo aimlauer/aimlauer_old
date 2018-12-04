@@ -1,4 +1,4 @@
-var speed = 60;
+var speed = 160;
 var prefijo = "% ";
 var i = 0;
 var comando = ""
@@ -17,7 +17,6 @@ function generar(){
 function AgregarBlink(){
   return '<span class="blink">_</span>'
 }
-
 
 function MensajeAyuda(){
   var texto = "help() -> <br>";
@@ -41,26 +40,12 @@ function EscribirAyuda(){
 
 function EscribirBienvenida(){
   var texto = generar();
-  var saltar = texto.indexOf("\n");
-  texto = texto.split('\n').join('');
- 
-  // Dejar el blink al final.
-  if(i != texto.length){
-    $('.welcome').text(function (_,txt) {
-      return txt.slice(0, -1);
-    });
-  }
 
   if (i < texto.length){
-    if(i == saltar){
-      $('.welcome').append("");
-    }else{
       $('.welcome').append(texto.charAt(i));
-      $('.welcome').append(AgregarBlink());
-    }
+  }
     i++;
     setTimeout(EscribirBienvenida,speed);
-  }
 }
 
 function SaltoLinea(){
@@ -243,7 +228,24 @@ $(document).keypress(function(event){
     }
 });
 
+function GenerarInfo(){
+  var info = ['INFO 1','INFO 2','INFO 3','es solo para diverme','setTimeout de javascript is a pain in the ass']
+  var output = ""
+  for (var r=0; r<info.length; r++){
+    output += info[r]+" "
+  }
+  return output
+}
+
+j=0
+function EscribirInfo(){
+  var texto = GenerarInfo();
+  if (j < texto.length){
+    $('.aboutme').append(texto.charAt(j));
+    j++
+  }
+  setTimeout(EscribirInfo,150);
+}
 
 
 setInterval(blink_text, 1000);
-setTimeout(EscribirBienvenida,50);
