@@ -56,7 +56,7 @@ function SaltoLinea(){
 
 /* Comandos */
 function ListarArchivos(){
-  var Archivos = ["linux.txt", "asdf.txt", "hack_me.txt"];
+  var Archivos = ["linux.txt", "mail", "hack_me.txt"];
   output = ""
   for (z=0; z<Archivos.length; z++){
     output += Archivos[z]+"<br>";
@@ -93,8 +93,14 @@ function Music(){
 
 function MostrarContenido(comando){
   switch(comando[1]){
-    case "asdf.txt":
-      return "I miss 2015";
+    case "mail":
+      response = ""
+      response += "start() -> <br>"
+      response +=  '&nbsp; build("g_ma_i_l"). <br>'
+      response +=  'build(Dominio) -> <br>'
+      response +=  '&nbsp; Email = "{dresuer,chelesout}"++Dominio++"[dot] com", <br>'
+      response +=  "&nbsp; io:format(Email). <br>"
+      return response;
 			break;
     case "hack_me.txt":
       return "bWkgcGFzc3dvcmQgZXMgMTIzNA==";
