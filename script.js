@@ -139,7 +139,7 @@ function Whoami(){
   response = ""
   response += "Andrés Imlauer <br>"
   response += "Intento de programador, "
-  response += "estudiante del 2do año de la carrera ciencias de la computación. <br>"
+  response += "estudiante del 2do año de la carrera ciencias de la computación."
   return response;
 }
 function Lenguajes(){
