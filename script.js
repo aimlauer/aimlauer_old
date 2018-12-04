@@ -27,6 +27,8 @@ function MensajeAyuda(){
   texto += "&nbsp; cd [arg] <br> ";
   texto += "&nbsp; echo [arg] <br> ";
   texto += "&nbsp; music <br> ";
+  texto += "&nbsp; whoami <br> ";
+  texto += "&nbsp; lenguajes <br> ";
   texto += "&nbsp; erl <br> ";
   texto += "&nbsp; python <br> ";
   texto += "&nbsp; clear <br> ";
@@ -132,6 +134,20 @@ function Python(){
   }
   return response
 }
+
+function Whoami(){
+  response = ""
+  response += "Andrés Imlauer <br>"
+  response += "Intento de programador, "
+  response += "estudiante del 2do año de la carrera ciencias de la computación. <br>"
+  return response;
+}
+function Lenguajes(){
+  response = ""
+  response += "Python, Erlang, C++, Bash"
+  return response
+}
+
 function Erl(){
   response = ""
   response += "Erlang/OTP 18 [erts-7.3] [source] [64-bit] [smp:6:6] [async-threads:10] [kernel-poll:false] <br>"
@@ -176,6 +192,12 @@ function EjecutarComando(comando){
       break;
     case "erl":
         $(nameclass).append(Erl());
+      break;
+    case "whoami":
+        $(nameclass).append(Whoami());
+      break;
+    case "lenguajes":
+        $(nameclass).append(Lenguajes());
       break;
     case "music":
         $(nameclass).append(Music());
