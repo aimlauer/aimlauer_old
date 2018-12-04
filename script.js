@@ -65,7 +65,7 @@ function ListarArchivos(){
 }
 
 function MostrarDirectorio(){
-  return "/home/allikn0w.github.io/Info"
+  return "/home/allikn0w.github.io"
 }
 
 function Informacion(arg){
