@@ -229,7 +229,7 @@ $(document).keypress(function(event){
 });
 
 function GenerarInfo(){
-  var info = ["Man I don't know what that fuck is going on there." ]
+  var info = ["WOKE UP SORPRISE, AM I REALLY ALIVE?" ]
   var output = ""
   for (var r=0; r<info.length; r++){
     output += info[r]+" "
