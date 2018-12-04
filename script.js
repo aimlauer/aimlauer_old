@@ -148,7 +148,7 @@ function Python(){
 
 function Whoami(){
   response = ""
-  response += "Andrés Imlauer <br>"
+  response += "Andrés Imlauer"
   return response;
 }
 function Lenguajes(){
