@@ -1,0 +1,88 @@
+<style>
+body {
+  margin: 0;
+  padding: 0;
+  background-image: linear-gradient(to right,#2c002e,#5c0506,#4d075c); 
+  height: 100vh;
+  position: relative;
+}
+.welcome {
+  display: inline-block;
+  font: normal 18px "Courier New", "Courier", monospace;
+  color: #ffffff;
+}
+
+
+.aboutme {
+  display: inline-block;
+  font: normal 13px "Courier New", "Courier", monospace;
+  color: #ffffff;
+}
+
+.CODIGO{
+  display:block;
+  padding: 1.5rem;
+}
+
+.text {
+  display: inline;
+  font-size: 1.2rem;
+  font: normal 18px "Courier New", "Courier", monospace;
+  color: #ffffff;
+}
+
+.old {
+  display: block;
+  font-size: 1.2rem;
+  font: normal 15px "Courier New", "Courier", monospace;
+  color: #ffffff;
+  padding: 1rem;
+}
+
+.help {
+  display: block;
+  font-size: 1.2rem;
+  font: normal 15px "Courier New", "Courier", monospace;
+  color: #ffffff;
+  padding: 1rem;
+}
+p {
+  display:inline;
+  color:#fff;
+  font: normal 15px "Courier New", "Courier", monospace;
+}
+
+#ayuda{
+  position:absolute;
+  top: 5;
+  right:0;
+  padding:3px;
+}
+
+</style>
+
+
+<html>
+<head>
+<script src="https://code.jquery.com/jquery-1.7.js"></script>
+<script src="script.js"></script>
+<meta charset="utf-8">
+</head>
+<body>
+  <code class="CODIGO">
+    <code class="welcome" id="welcome"><script>setTimeout(EscribirBienvenida,50)</script>
+    </code><p class="blink">_</p>
+  </code>
+  <code class="CODIGO">
+    <code class="aboutme">
+      <script>setTimeout(EscribirInfo,500)</script>
+    </code><p class="blink">_</p>
+  </code>
+
+    <p class="help" id="ayuda"><script>EscribirAyuda()</script></p>
+  <code class="CODIGO">
+    <code class="text">
+    % </code><p class="blink">_</p>
+  <code>
+</body>
+</html>

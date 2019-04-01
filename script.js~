@@ -10,7 +10,7 @@ function blink_text() {
 }
 
 function generar(){
-  var texto = "cat /home/aimlauer.github.io/info";
+  var texto = "cat /home/allikn0w.github.io/info";
   return texto;
 }
 
